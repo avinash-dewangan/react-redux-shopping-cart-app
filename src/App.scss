@@ -47,3 +47,49 @@ a:hover {
     }
   }
 }
+
+// .custom-control {
+//   position: relative;
+//   display: block;
+//   min-height: 1.5rem;
+//   padding-left: 1.7rem;
+// }
+// .custom-control-input {
+//   position: absolute;
+//   z-index: -1;
+//   opacity: 0;
+// }
+// .custom-control-label {
+//   position: relative;
+//   margin-bottom: 0;
+//   vertical-align: top;
+// }
+// .text-warning {
+//   color: #ff9017 !important;
+// }
+// custom-control-input:checked ~ .custom-control-label::before {
+//   color: #fff;
+//   border-color: #3167eb;
+//   background-color: #3167eb;
+// }
+// .custom-checkbox .custom-control-label::before {
+//   border-radius: 0.2rem;
+// }
+// .custom-control-label::before,
+// .custom-file-label,
+// .custom-select {
+//   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+//     box-shadow 0.15s ease-in-out;
+// }
+// .custom-control-label::before {
+//   position: absolute;
+//   top: 0.15rem;
+//   left: -1.7rem;
+//   display: block;
+//   width: 1.2rem;
+//   height: 1.2rem;
+//   pointer-events: none;
+//   content: "";
+//   background-color: #fff;
+//   border: #969696 solid 1px;
+// }

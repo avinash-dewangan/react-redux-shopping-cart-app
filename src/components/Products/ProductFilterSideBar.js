@@ -9,11 +9,17 @@ function ProductFilterSideBar({ products, setsearchResult, setFlag, setPageNumbe
 
     const selectCat = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
-        const productList = products.filter(prod => prod.category === e.target.value)
-        setsearchResult(productList)
-        setFlag(true)
         setPageNumber(0);
+        console.log(e.target.value);
+        if (e.target.value === "allProducts") {
+            setsearchResult(products)
+            setFlag(false)
+        } else {
+            const productList = products.filter(prod => prod.category === e.target.value)
+            setsearchResult(productList)
+            setFlag(true)
+        }
+
     }
 
     const productCatWise = Object.keys(map).map((prodCat, index) => {
@@ -28,6 +34,7 @@ function ProductFilterSideBar({ products, setsearchResult, setFlag, setPageNumbe
             <div className="card-body">
                 <h5 className="card-title">Category</h5>
                 <ul className="list-menu">
+                    <li ><button href="#" onClick={selectCat} value="allProducts" >All Products<span className="badge badge-pill badge-light float-right">{products.length}</span></button></li>
                     {productCatWise}
                 </ul>
             </div>

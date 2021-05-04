@@ -10,6 +10,7 @@ function App({ currentItem }) {
   return (
     <Router>
       <div className="App">
+
         <Navbar />
         <Switch>
           <Route exact path="/" component={ProductList} />

@@ -7,6 +7,7 @@ import ProductFilterSideBar from './ProductFilterSideBar'
 import Slider from '../Form/Slider'
 import SearchBox from '../Form/SearchBox'
 import Pagination from "../Pagination/Pagination"
+import Rating from '../Form/Rating'
 
 function ProductList({ products, fetchProducts }) {
 
@@ -42,7 +43,6 @@ function ProductList({ products, fetchProducts }) {
         <div className="container">
             <div className="row">
                 <div className="col-xs-12 col-md-3">
-
                     <ProductFilterSideBar
                         products={products}
                         setsearchResult={setsearchResult}
@@ -55,6 +55,7 @@ function ProductList({ products, fetchProducts }) {
                         setFlag={setFlag}
                         setPageNumber={setPageNumber}
                     />
+
                 </div>
 
                 <div className="col-xs-12 col-md-9">
@@ -65,7 +66,7 @@ function ProductList({ products, fetchProducts }) {
                         setPageNumber={setPageNumber}
                     />
                     {displayProduct}
-                    {displayProduct.length < 6 ? ("") : (
+                    {pageCount < 1 ? ("") : (
                         <Pagination pageCount={pageCount} changePage={changePage} />
                     )}
 

@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate'
 
 
 
-function Pagination({pageCount, changePage}) {
+function Pagination({ pageCount, changePage }) {
     //const [pageNumber, setpageNumber] = useState(0)
     //const pageCount = Math.ceil(flag ? searchResult.length / productPerPage : products.length / productPerPage);
     //const productPerPage = 9;
@@ -11,6 +11,7 @@ function Pagination({pageCount, changePage}) {
     // const changePage = ({ selected }) => {
     //     setpageNumber(selected);
     // }
+    const currentPage = 1
     return (
         <div className="col-md-12" style={{ float: "left" }}>
 
@@ -26,6 +27,8 @@ function Pagination({pageCount, changePage}) {
                 activeClassName={"active"}
                 pageLinkClassName={"page-link"}
                 pageClassName={"page-item"}
+                forcePage={currentPage - 1}
+
             />
         </div>
     )
