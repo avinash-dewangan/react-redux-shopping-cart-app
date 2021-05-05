@@ -23,8 +23,8 @@ function Cart({ cart }) {
             items += Math.ceil(item.qty);
             price += Math.ceil(item.qty * item.price);
             taxPrice += Math.ceil(price * 0.09);
-            shippingChargesPrice += price>=500?0:40;
-            
+            shippingChargesPrice += price >= 500 ? 0 : 40;
+
         })
         // console.log(price)
         // console.log(taxPrice)
@@ -46,10 +46,10 @@ function Cart({ cart }) {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-8 col-xs-12">
+                <div className="col-md-8 col-12">
                     {cartItemList}
                 </div>
-                <div className="col-md-4 col-xs-12">
+                <div className="col-md-4 col-12 mt-5">
                     <div className="card" style={{ width: "18rem" }}>
                         <div className="card-body">
                             <h5 className="card-title">Cart Summary</h5>
@@ -57,7 +57,7 @@ function Cart({ cart }) {
                             <p>Price : ${totalPrice}</p>
                             <p>Tax : ${tax}</p>
                             <p>Discount : ${discount}</p>
-                            <p>Shipping Charges : {shippingCharges===0?"FREE":shippingCharges}</p>
+                            <p>Shipping Charges : {shippingCharges === 0 ? "FREE" : shippingCharges}</p>
                             <p>Total Amount : ${grandTotal}</p>
                             <button className="btn btn-secondary disabled">Proceed to Checkout</button>
                         </div>

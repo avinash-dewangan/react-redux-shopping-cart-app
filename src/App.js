@@ -6,11 +6,11 @@ import ProductList from './components/Products/ProductList';
 import Cart from './components/Cart/Cart';
 import SingleItem from './components/Products/SingleItem';
 import { connect } from 'react-redux'
+
 function App({ currentItem }) {
   return (
     <Router>
       <div className="App">
-
         <Navbar />
         <Switch>
           <Route exact path="/" component={ProductList} />
@@ -20,7 +20,7 @@ function App({ currentItem }) {
           ) : (<Route exact path="/product/:id" component={SingleItem} />)}
         </Switch>
       </div>
-    </Router>
+    </Router >
   );
 }
 

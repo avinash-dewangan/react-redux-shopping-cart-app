@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import validateInfo from '../validation/validateInfo'
 
-function useForm(validateInfo) {
-    const [values, setValues] = useState({
-        minvalue: '',
-        maxvalue: ''
-    })
+function useForm(validateInfo, objectOfValues) {
+    const [values, setValues] = useState(objectOfValues)
     const [errors, setErrors] = useState({})
+
 
     const handleChange = e => {
         const { name, value } = e.target
@@ -17,9 +15,10 @@ function useForm(validateInfo) {
     }
     const handleSubmit = e => {
         e.preventDefault();
+        console.log(values)
         setErrors(validateInfo(values))
     }
-    return {handleChange, values, handleSubmit, errors}
+    return { handleChange, values, handleSubmit, errors }
 }
 
 export default useForm;

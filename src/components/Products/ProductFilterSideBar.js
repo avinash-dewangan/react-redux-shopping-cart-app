@@ -1,10 +1,10 @@
 import React from 'react'
 
 function ProductFilterSideBar({ products, setsearchResult, setFlag, setPageNumber }) {
+
     var map = {}
     products.map(function (product) {
         map[product.category] = undefined;
-
     });
 
     const selectCat = (e) => {

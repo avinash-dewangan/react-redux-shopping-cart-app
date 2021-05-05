@@ -14,18 +14,22 @@ function SearchBox({ products, setsearchResult, setFlag, setPageNumber }) {
         setPageNumber(0);
     }
     return (
-        <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search for product brand and more"
-            aria-label="Search"
-            value={searchTerm}
-            onChange={searchHandler}
-            onPaste={searchHandler}
-            onKeyUp={searchHandler}
-            onKeyDown={searchHandler}
-            onKeyPress={searchHandler}
-        />
+        <>
+            <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search for product brand and more"
+                aria-label="Search"
+                value={searchTerm}
+                onChange={searchHandler}
+                onPaste={searchHandler}
+                onKeyUp={searchHandler}
+                onKeyDown={searchHandler}
+                onKeyPress={searchHandler}
+            />
+
+
+        </>
     )
 }
 

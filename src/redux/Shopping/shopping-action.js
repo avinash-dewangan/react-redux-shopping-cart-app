@@ -63,7 +63,7 @@ export const fetchProductFailure = (error) => {
 export const fetchProducts = () => {
     return (dispatch) => {
         dispatch(fetchProductRequest)
-        axios.get("http://localhost:3006/products")
+        axios.get(`${process.env.REACT_APP_API_URL}/products`)
             .then(res => {
                 // console.log(res)
                 const products = res.data
