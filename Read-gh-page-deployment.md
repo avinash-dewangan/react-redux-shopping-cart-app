@@ -24,6 +24,7 @@ Upload your db.json file there;
 Go to https://my-json-server.typicode.com/<your-github-username>/<your-repo-name> to access your server.
 
 https://my-json-server.typicode.com/avinash-dewangan/json-server
+https://my-json-server.typicode.com/avinash-dewangan/react-redux-shopping-cart-app
 
 Step 2:
 Deploy your application to GitHub following the usual process:
