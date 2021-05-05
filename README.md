@@ -1,3 +1,6 @@
+Demo Shopping cart App Deploy given link
+https://avinash-dewangan.github.io/react-redux-shopping-cart-app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
