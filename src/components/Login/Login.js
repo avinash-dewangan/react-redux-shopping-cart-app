@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory, Redirect } from "react-router-dom";
-import useForm from "../../Form/useForm"
-import validateInfo from "../../validation/validateInfo"
+import useForm from "../Form/useForm"
+import validateInfo from "../validation/validateInfo"
 function Login() {
 
     let formObject = {
@@ -9,26 +9,28 @@ function Login() {
         password: ''
     }
 
+    const isLoggedIn = localStorage.getItem("isLoggedIn")
     const { handleChange, values } = useForm(validateInfo, formObject)
-    const [isLoggedIn, setisLoggedIn] = useState(false)
+    //const [isLoggedIn, setisLoggedIn] = useState(token !== null ? true : false)
     const history = useHistory();
+    console.log(isLoggedIn)
+
 
     function handleSubmit(event) {
         event.preventDefault();
         try {
             if (values.username === "a" && values.password === "b") {
-                setisLoggedIn(true);
-                history.push("/Admin");
-            } else {
-                history.push("/Login");
+                localStorage.setItem("token", "fwourowjslfwlksdfskfoiweqrkds");
+                //  setisLoggedIn(true);
+                localStorage.setItem("isLoggedIn", true);
+                history.push("/admin");
             }
         } catch (e) {
             alert(e.message);
         }
     }
 
-
-    return (
+    return isLoggedIn ? <Redirect to="/admin" /> : (
         <div id="login">
             <h3 className="text-center text-white pt-5">Login form</h3>
             <div className="container">
@@ -63,3 +65,4 @@ function Login() {
 }
 
 export default Login
+

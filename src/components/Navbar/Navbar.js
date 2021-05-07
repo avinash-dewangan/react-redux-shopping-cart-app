@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+
 function Navbar({ cart }) {
 
   const [cartCount, setcartCount] = useState(0);
@@ -14,6 +15,11 @@ function Navbar({ cart }) {
 
   }, [cart, cartCount]);
 
+  const token = localStorage.getItem("token")
+  let isLoggedIn = false
+  if (token !== null) {
+    isLoggedIn = true
+  }
 
   return (
     <div className="" style={{ paddingBottom: "100px" }}>
@@ -24,11 +30,44 @@ function Navbar({ cart }) {
         zIndex: "10"
       }} className="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div className="container-fluid">
+          {isLoggedIn}
           <Link to="/" className="navbar-brand">
             <i class="fa fa-cart-arrow-down" style={{ fontSize: "50px" }} aria-hidden="true"></i> Shopping Mart
           </Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                {isLoggedIn ? (<Link to="/logout" className="nav-link" href="#">
+                  Logout <span className="sr-only">(current)</span>
+                </Link>) : (<Link to="/login" className="nav-link" href="#">
+                  Login <span className="sr-only">(current)</span>
+                </Link>)}
 
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+        </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="#">User Name</a>
+                  <a className="dropdown-item" href="#">Action</a>
+                  <div className="dropdown-divider"></div>
+                  <a className="dropdown-item" href="#">Product Detials</a>
+                </div>
+              </li>
+              {/* <li className="nav-item">
+                <a className="nav-link disabled" href="#">Disabled</a>
+              </li> */}
+            </ul>
+
+          </div>
           <Link to="/cart" style={{ position: "relative" }}>
             <p style={{
               position: "absolute",
