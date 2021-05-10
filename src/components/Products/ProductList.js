@@ -7,7 +7,7 @@ import ProductFilterSideBar from './ProductFilterSideBar'
 import Slider from '../Form/Slider'
 import SearchBox from '../Form/SearchBox'
 import Pagination from "../Pagination/Pagination"
-import Rating from '../Form/Rating'
+
 
 function ProductList({ products, fetchProducts }) {
 

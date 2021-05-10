@@ -60,6 +60,55 @@ export const fetchProductFailure = (error) => {
 }
 
 
+export const addProductSucess = (product) => {
+    console.log("addProductSucess calling")
+    return {
+        type: actionTypes.CREATE_PRODUCT,
+        payload: product,
+
+    }
+}
+
+//raxc
+export const getProduct = (id) => {
+    return (dispatch) => {
+        //dispatch(fetchProductRequest)
+        axios.put(`${process.env.REACT_APP_API_URL}/products`, id)
+            .then(res => {
+                const returnproduct = res.data
+                console.log(returnproduct)
+                dispatch({
+                    type: actionTypes.GET_PRODUCT,
+                    payload: id
+                })
+            })
+            .catch(error => {
+                //const errorMsg = error.message
+            })
+    }
+}
+
+
+
+export const addProduct = (product) => {
+    console.log("add product calling")
+    return (dispatch) => {
+        //dispatch(fetchProductRequest)
+        axios.post(`${process.env.REACT_APP_API_URL}/products`, product)
+            .then(res => {
+                // console.log(res)
+                const returnproduct = res.data
+                console.log(returnproduct)
+                dispatch(addProductSucess(returnproduct))
+            })
+            .catch(error => {
+                //const errorMsg = error.message
+                // dispatch(fetchProductFailure(errorMsg))
+            })
+    }
+}
+
+
 export const fetchProducts = () => {
     return (dispatch) => {
         dispatch(fetchProductRequest)

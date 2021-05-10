@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { addProduct } from "../../../redux/Shopping/shopping-action"
+import { addProduct, getProduct } from "../../../redux/Shopping/shopping-action"
 import ProductLists from "./ProductLists"
-function ProductAdd() {
+import { useParams } from 'react-router-dom'
+function EditProduct() {
 
 
     const formObject = {
@@ -13,15 +14,17 @@ function ProductAdd() {
         image: '',
         rating: '',
     }
+    const { productId } = useParams();
     const [values, setValues] = useState(formObject)
     const dispatch = useDispatch();
     const productList = useSelector(state => state.shop.products)
-    // const load = () => dispatch(fetchProducts());
-    // useEffect(() => {
-    //     load();
-    // }, [addProduct]);
+    //const product = useSelector(state => state.shop.product)
 
 
+    useEffect(() => {
+        dispatch(getProduct(productId))
+        console.log("dd")
+    }, [productId])
 
     const onChangeHandler = (e) => {
         const { name, value } = e.target
@@ -44,7 +47,7 @@ function ProductAdd() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-sm">
+                <div class="col-sm">
                     <form onSubmit={(e) => onSubmitHandler(e)}>
                         <h1>Add Product</h1>
                         <hr />
@@ -77,7 +80,7 @@ function ProductAdd() {
                     </form>
 
                 </div>
-                <div className="col-sm">
+                <div class="col-sm">
                     <ProductLists productList={productList} />
                 </div>
             </div>
@@ -85,4 +88,4 @@ function ProductAdd() {
     )
 }
 
-export default ProductAdd
+export default EditProduct

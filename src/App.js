@@ -11,8 +11,10 @@ function App() {
       <div className="App">
         {isTrue
           ? (
-            <Navbar />,
-            <RouteContainer />
+            <>
+              <Navbar />
+              <RouteContainer />
+            </>
           ) : (
             <Test />
           )}

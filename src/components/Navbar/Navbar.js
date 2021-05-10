@@ -32,7 +32,7 @@ function Navbar({ cart }) {
         <div className="container-fluid">
           {isLoggedIn}
           <Link to="/" className="navbar-brand">
-            <i class="fa fa-cart-arrow-down" style={{ fontSize: "50px" }} aria-hidden="true"></i> Shopping Mart
+            <i className="fa fa-cart-arrow-down" style={{ fontSize: "50px" }} aria-hidden="true"></i> Shopping Mart
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -41,29 +41,29 @@ function Navbar({ cart }) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                {isLoggedIn ? (<Link to="/logout" className="nav-link" href="#">
+                {isLoggedIn ? (<Link to="/logout" className="nav-link" >
                   Logout <span className="sr-only">(current)</span>
-                </Link>) : (<Link to="/login" className="nav-link" href="#">
+                </Link>) : (<Link to="/login" className="nav-link" >
                   Login <span className="sr-only">(current)</span>
                 </Link>)}
 
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+                <Link className="nav-link" to="#">Link</Link>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dropdown
-        </a>
+        </Link>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">User Name</a>
-                  <a className="dropdown-item" href="#">Action</a>
+                  <Link className="dropdown-item" to="#">User Name</Link>
+                  <Link className="dropdown-item" to="#">Action</Link>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">Product Detials</a>
+                  <Link className="dropdown-item" to="#">Product Detials</Link>
                 </div>
               </li>
               {/* <li className="nav-item">
-                <a className="nav-link disabled" href="#">Disabled</a>
+                <Link className="nav-link disabled" to="#">Disabled</Link>
               </li> */}
             </ul>
 

@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   cart: [], //{id, title, desc, price, img, qty}
   currentItem: null,
   loading: false,
+  product: null,
 
 }
 const shoppingReducer = (state = INITIAL_STATE, action) => {
@@ -55,6 +56,24 @@ const shoppingReducer = (state = INITIAL_STATE, action) => {
         products: [],
         error: action.payload
       }
+    case actionTypes.CREATE_PRODUCT:
+      console.log("actionTypes.CREATE_PRODUCT")
+      // const idGen = state.products.length - 1
+      // action.payload["id"] = idGen //dynamic
+      console.log(action.payload)
+      return {
+        ...state,
+        products: [...state.products, action.payload]
+      }
+    case actionTypes.GET_PRODUCT:
+      const productItem = state.products.find(prod => prod.id === action.payload.id)
+      console.log(productItem)
+      return {
+        ...state,
+        product: productItem
+
+      }
+
     default:
       return state;
 

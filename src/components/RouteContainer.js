@@ -8,6 +8,8 @@ import ProductList from "../components/Products/ProductList"
 import SingleItem from "../components/Products/SingleItem"
 import Cart from "./Cart/Cart"
 import Test from './Login/Test'
+import ProductAdd from './Products/ProductCRUD/ProductAdd'
+import EditProduct from './Products/ProductCRUD/EditProduct'
 
 
 function RouteContainer({ currentItem }) {
@@ -20,6 +22,8 @@ function RouteContainer({ currentItem }) {
             <Route exact path="/admin" component={Admin} />
 
             <Route exact path="/cart" component={Cart} />
+            <Route exact path="/product-edit/:id" component={ProductAdd} />
+            <Route exact path="/product-delete/:id" component={EditProduct} />
 
             {!currentItem ? (
                 <Redirect to="/" />

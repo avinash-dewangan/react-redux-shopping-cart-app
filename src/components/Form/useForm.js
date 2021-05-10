@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import validateInfo from '../validation/validateInfo'
+import { useState } from 'react'
+//import validateInfo from '../validation/validateInfo'
 
 function useForm(validateInfo, objectOfValues) {
     const [values, setValues] = useState(objectOfValues)
