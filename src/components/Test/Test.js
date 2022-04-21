@@ -1,6 +1,7 @@
 // import LifeCycle from "./LifeCycleMethod/LifeCycle"
 
 import React from 'react'
+import Main from '../DynamicForm/Main'
 // import PureComponent from "./PureComponents/PureComp"
 // import RegComp from "./PureComponents/RegComp"
 // import ParentComp from "./PureComponents/ParentComp"
@@ -26,7 +27,8 @@ function Test() {
               <ReduxForm />
                <ChildToParentDataTransfer />
            */}
-      <FormClass />
+      {/* <FormClass /> */}
+      
 
     </div>
   )
